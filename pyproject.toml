@@ -9,6 +9,7 @@ license = "MIT"
 python = "^3.9"
 djangorestframework = "^3.12.2"
 psycopg2 = "^2.8.6"
+drf-nested-routers = "^0.93.3"
 
 [tool.poetry.dev-dependencies]
 

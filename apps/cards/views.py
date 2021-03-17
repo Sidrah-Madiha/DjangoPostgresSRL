@@ -7,7 +7,7 @@ class CardSerializer(serializers.ModelSerializer):
     deckId = serializers.PrimaryKeyRelatedField(queryset=Deck.objects.all())
     class Meta:
         model = Card
-        fields = ['id', 'deckId', 'question','answer']
+        fields = ['id', 'deckId', 'question','answer','created_at', 'updated_at', 'bucket']
 
 class CardViewSet(viewsets.ModelViewSet):
     """

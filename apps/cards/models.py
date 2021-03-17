@@ -1,7 +1,10 @@
 from django.db import models
 from apps.decks.models import Deck
+from apps.utils.models import Timestamps
+
+
 # Create your models here.
-class Card(models.Model):
+class Card(Timestamps):
     deckId = models.ForeignKey(Deck, on_delete=models.CASCADE)
     question = models.TextField()
     answer = models.TextField()
@@ -15,6 +18,7 @@ class Card(models.Model):
     bucket = models.IntegerField(choices=buckets, default=1)
     next_reviewed_at = models.DateTimeField(auto_now_add=True)
     last_reviewed_at = models.DateTimeField(blank=True, null=True)
+
     # // createdAt:
     # // updatedAt:
 
