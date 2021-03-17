@@ -19,7 +19,12 @@ class DeckViewSet(viewsets.ModelViewSet):
     serializer_class = DeckSerializer
 
 class DeckCardViewSet(viewsets.ViewSet):
-    def list(self, request, deckId_pk=None):
+    def list(self, request, deckId_pk):
         queryset = Card.objects.filter(deckId=deckId_pk)
+        serializer = CardSerializer(queryset, many=True)
+        return Response(serializer.data)
+
+    def retrieve(self, request, pk, deckId_pk):
+        queryset = Card.objects.filter(pk=pk, deckId=deckId_pk)
         serializer = CardSerializer(queryset, many=True)
         return Response(serializer.data)
