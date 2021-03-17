@@ -12,7 +12,7 @@ class Card(models.Model):
         (4, '16 Days'),
         (5, '30 Days'),
     ]
-    bucket = models.IntegerField(choices=buckets, default='1 Day')
+    bucket = models.IntegerField(choices=buckets, default=1)
     next_reviewed_at = models.DateTimeField(auto_now_add=True)
     last_reviewed_at = models.DateTimeField(blank=True, null=True)
     # // createdAt:
