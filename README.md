@@ -3,7 +3,7 @@ In this project I tried my hands on Django + PostgreSQL
 It contains 2 apps: cards and decks
 A deck can contain many cards, cards can only belong to a specific deck, so I added foreign key for it.
 
-** Project Demo**
+**Project Demo**
 https://www.loom.com/share/6256635d6d764590b2da40b18521cfa3
 
 Created these api endpoints: 
